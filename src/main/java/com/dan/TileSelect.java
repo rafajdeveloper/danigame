@@ -1,8 +1,5 @@
 package com.dan;
 
-import java.awt.Toolkit;
-import java.awt.datatransfer.StringSelection;
-
 import javax.swing.JRadioButton;
 
 public class TileSelect extends JRadioButton {
@@ -13,11 +10,7 @@ public class TileSelect extends JRadioButton {
 
 	public TileSelect(Oyendo oyendo, char c) {
 		this.c = c;
-		this.addActionListener((e) -> {
-			if (isSelected()) {
-				Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection("" + c), null);
-			}
-		});
+		this.addActionListener(oyendo);
 	}
 	
 	public char getC() {

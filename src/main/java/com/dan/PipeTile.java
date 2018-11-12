@@ -1,6 +1,7 @@
 package com.dan;
 
 import java.awt.Font;
+import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -102,6 +103,14 @@ public class PipeTile extends Tile {
 		this.c = c;
 		this.row = row;
 		this.col = col;
+	}
+
+	public PipeTile(char c, int row, int col,ActionListener l) {
+		super("" + c);
+		this.c = c;
+		this.row = row;
+		this.col = col;
+		addActionListener(l);
 	}
 
 	public boolean flowsDown(PipeTile other) {
